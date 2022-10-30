@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { items, PrismaClient } from '@prisma/client';
 
-const prisma: PrismaClient  = new PrismaClient();
+const prisma: PrismaClient = new PrismaClient();
 const app: Express = express();
 
 app.listen(8080, () => {
@@ -9,7 +9,7 @@ app.listen(8080, () => {
 });
 
 app.get("/", async (req: Request, res: Response) => {
-  const items = await prisma.items.findMany();
+  const items: items[] = await prisma.items.findMany();
 
   res.status(200).send(items);
 });

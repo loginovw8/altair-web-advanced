@@ -1,7 +1,17 @@
-npm i -D typescript @types/express @types/node
+# Настройка проекта
 
-npx tsc --init
+Установка зависимостей
 
-npm install -D concurrently nodemon
+    npm install
 
-npm run dev
+Создать файл .env в корневом каталоге и добавить конфигурацию БД
+
+    DATABASE_URL="mysql://root:secret@localhost:3306/nature2"
+
+Выполнить миграцию БД из конфигурации ORM Prisma
+
+    npx prisma migrate dev
+
+Запуск веб-сервера
+
+    npm run dev

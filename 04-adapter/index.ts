@@ -9,3 +9,19 @@ class Book implements BookInterface {
         console.log('turning the page of the paper book');
     }
 }
+
+class Person {
+    item: BookInterface;
+
+    constructor(item: BookInterface) {
+        this.item = item;
+    }
+
+    read() {
+        this.item.open();
+        this.item.turnPage();
+    }
+}
+
+const person = new Person(new Book());
+person.read();

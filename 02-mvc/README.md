@@ -15,3 +15,22 @@
 Запуск веб-сервера
 
     npm run dev
+
+Конфигурационный файл отладки VSCode
+
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug TS",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "runtimeArgs": [
+            "--nolazy"
+        ],
+        "sourceMaps": true,
+        "program": "${workspaceFolder}/index.ts",
+        "outFiles": [
+            "${workspaceFolder}/**/*.js"
+        ]
+    }
